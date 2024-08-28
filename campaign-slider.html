@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Swiper Demo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+  <!-- Link Swiper's CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <!-- Link Tailwind CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+<link href="./assets/css/output.css" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Custom Styles -->
+<style>
+  /* .campaign-slider .swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.campaign-slider .swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 488px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.campaign-slider .swiper-pagination-bullet {
+  background-color: #E0EBD3;
+  width: 46.5px;
+  height: 4.55px;
+  border-radius: 1.5px;
+  opacity: 1;
+}
+
+.campaign-slider .swiper-pagination-bullet-active {
+  background-color: #ee9e02;
+  width: 93px;
+  height: 4.55px;
+  border-radius: 1.5px;
+} */
+
+</style>
+</head>
+
+<body class="bg-secondary">
+  <!-- Swiper Container -->
+  <div class="swiper campaign-slider">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide"><img src='./assets/img/campaign-slide-1.png' /></div>
+      <div class="swiper-slide"><img src='./assets/img/campaign-slide-1.png' /></div>
+      <div class="swiper-slide"><img src='./assets/img/campaign-slide-1.png' /></div>
+      <div class="swiper-slide"><img src='./assets/img/campaign-slide-1.png' /></div>
+    </div>
+    <div class="pt-[55px] pb-[51px] flex items-center">
+    <div class="swiper-pagination relative w-full flex justify-center"></div>
+
+    </div>
+  </div>
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <!-- Initialize Swiper -->
+  <script>
+    var swiper = new Swiper(".campaign-slider", {
+      // slidesPerView: 1.7,
+      spaceBetween: 30,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      }, breakpoints: {
+        640: {
+          slidesPerView: 1,
+          spaceBetween: 8,
+        },
+        641: {
+          slidesPerView: 1.7,
+          spaceBetween: 16,
+        },
+      },
+    });
+  </script>
+</body>
+
+</html>

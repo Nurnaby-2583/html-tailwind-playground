@@ -28,8 +28,10 @@ module.exports = {
           border: "var(--grey-border)",
         },
       },
-      fontFamily: {},
-
+      fontFamily: {
+        newsreader: ["Newsreader", "serif"],
+        lato: ["Lato", "sans-serif"],
+      },
       spacing: {},
     },
   },

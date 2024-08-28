@@ -9,6 +9,7 @@
     href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <link href="./assets/css/output.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:wght@400;700&display=swap" rel="stylesheet">
   <style>
 
     
@@ -19,65 +20,51 @@
 
 <body class="">
   <section class="w-full my-6">
-    <div class="max-w-[1280px] swiper imagine-slider ">
+    <div class="max-w-[1280px] mx-auto swiper imagine-slider ">
       <div class="swiper-wrapper ">
         <div class="swiper-slide">
-          <h2 class="py-4 text-[18px]">
+          <p class="imagine-slide-title">
             Products
-          </h2>
-          <img src="./assets/images/imagine-slide-1.png" />
+          </p>
+          <img src='./assets/img/imagine-slide-1.png' />
         </div>
         <div class="swiper-slide">
-          <h2 class="py-4 text-[18px]">
+          <p class="imagine-slide-title">
             Express Painting
-          </h2>
-          <img src="./assets/images/imagine-slide-2.png" />
+          </p><img src='./assets/img/imagine-slide-2.png' />
         </div>
         <div class="swiper-slide">
-          <h2 class="py-4 text-[18px]">
+          <p class="imagine-slide-title">
             Products
-          </h2>
-          <img src="./assets/images/imagine-slide-1.png" />
+          </p>
+          <img src='./assets/img/imagine-slide-1.png' />
         </div>
         <div class="swiper-slide">
-          <h2 class="py-4 text-[18px]">
+          <p class="imagine-slide-title">
             Express Painting
-          </h2>
-          <img src="./assets/images/imagine-slide-2.png" />
+          </p><img src='./assets/img/imagine-slide-2.png' />
         </div>
         <div class="swiper-slide">
-          <h2 class="py-4 text-[18px]">
+          <p class="imagine-slide-title">
             Products
-          </h2>
-          <img src="./assets/images/imagine-slide-1.png" />
+          </p>
+          <img src='./assets/img/imagine-slide-1.png' />
         </div>
         <div class="swiper-slide">
-          <h2 class="py-4 text-[18px]">
+          <p class="imagine-slide-title">
             Express Painting
-          </h2>
-          <img src="./assets/images/imagine-slide-2.png" />
+          </p><img src='./assets/img/imagine-slide-2.png' />
         </div>
-        
-
       </div>
       <div class="relative h-[124px] py-6 flex items-center">
         <div class="swiper-navigation w-full flex justify-center ">
-          <div class="swiper-button-prev  right-0 -left-[90px] imagine-slider-nav-button">
-            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path
-                d="M17.4282 23.4824L16.5688 24.3418C16.1782 24.6934 15.5923 24.6934 15.2407 24.3418L7.62354 16.7637C7.27197 16.373 7.27197 15.7871 7.62354 15.4355L15.2407 7.81836C15.5923 7.4668 16.1782 7.4668 16.5688 7.81836L17.4282 8.67773C17.7798 9.06836 17.7798 9.6543 17.4282 10.0449L12.7017 14.5371L23.9126 14.5371C24.4595 14.5371 24.8501 14.9277 24.8501 15.4746L24.8501 16.7246C24.8501 17.2324 24.4595 17.6621 23.9126 17.6621L12.7017 17.6621L17.4282 22.1152C17.7798 22.5059 17.8188 23.0918 17.4282 23.4824Z"
-                fill="black" fill-opacity="0.66" />
-            </svg>
+          <div class="swiper-button-prev  right-0 -left-[100px] imagine-slider-nav-button">
+            <img class='next-prev-svg' src='./assets/img/arrow-right.svg' />
           </div>
-          <div class="swiper-button-next right-[-90px] left-0 imagine-slider-nav-button">
-            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path
-                d="M14.5718 8.51758L15.4312 7.6582C15.8218 7.30664 16.4077 7.30664 16.7593 7.6582L24.3765 15.2363C24.728 15.627 24.728 16.2129 24.3765 16.5645L16.7593 24.1816C16.4077 24.5332 15.8218 24.5332 15.4312 24.1816L14.5718 23.3223C14.2202 22.9316 14.2202 22.3457 14.5718 21.9551L19.2983 17.4629H8.0874C7.54053 17.4629 7.1499 17.0723 7.1499 16.5254V15.2754C7.1499 14.7676 7.54053 14.3379 8.0874 14.3379H19.2983L14.5718 9.88477C14.2202 9.49414 14.1812 8.9082 14.5718 8.51758Z"
-                fill="black" fill-opacity="0.66" />
-            </svg>
-
+          <div class="swiper-button-next right-[-100px] left-0 imagine-slider-nav-button">
+            <img class='rotate-180 next-prev-svg' src='./assets/img/arrow-right.svg' />
           </div>
-
+    
         </div>
       </div>
     </div>
@@ -91,16 +78,27 @@
   <!-- Initialize Swiper -->
   <script>
     var swiper = new Swiper(".imagine-slider", {
-      slidesPerView: 2,
-      spaceBetween: 16,
-      pagination: {
-        clickable: true,
-      },
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
-    });
+        slidesPerView: 1,
+        spaceBetween: 16,
+        pagination: {
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        breakpoints: {
+          640: {
+            slidesPerView: 1,
+            spaceBetween: 8,
+          },
+          641: {
+            slidesPerView: 2,
+            spaceBetween: 16,
+          },
+        },
+      });
+
   </script>
 
   <script src="https://cdn.jsdelivr.net/npm/preline@2.0.3/dist/preline.min.js"></script>

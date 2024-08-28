@@ -4,14 +4,17 @@
 
 :root {
   --primary: #ee9e02;
-  --secondary: #212121;
-  --green-dark: #3d402c;
+  --secondary: #3d402c;
+  --heading: #212121;
   --green-light: #e0ebd3;
   --grey-dark: #616161;
   --grey-mid: #9e9e9e;
   --grey-light: #d2d2d2;
   --grey-border: #6e6a64;
 }
+
+@import url("https://fonts.googleapis.com/css2?family=Newsreader:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap");
 
 .custom-container {
   @apply mx-auto  max-w-[1440px];
@@ -20,14 +23,67 @@
 /********************** Home page Imagine slider **********************/
 
 .imagine-slider .swiper-slide {
-  @apply border-t-[1px] border-grey-border;
+  @apply border-t-[1px] border-grey-border border-solid;
+}
+
+.imagine-slide-title {
+  @apply py-4 font-newsreader text-grey-border font-bold leading-[21px] text-[18px];
 }
 
 .imagine-slider-nav-button {
-  @apply mx-auto text-center size-[52px] border-[1.3px] border-black/65 rounded-full flex justify-center items-center shadow-lg transition-colors duration-300 ease-in-out;
+  @apply mx-auto text-center size-[40px] md:size-[52px] border-[1.3px] border-solid border-black/65 rounded-full flex justify-center items-center shadow-lg transition-colors duration-300 ease-in-out;
 }
-
+.next-prev-svg {
+  @apply max-w-[14px] md:max-w-[31px];
+}
 .imagine-slider .swiper-button-next::after,
 .swiper-button-prev::after {
   display: none;
 }
+
+/********************** Home page Campaign slider **********************/
+.campaign-slider .swiper-slide {
+  @apply text-center text-[18px] bg-white flex justify-center items-center rounded-[8px] shadow-[0_4px_10px_rgba(0,0,0,0.1)];
+}
+
+.campaign-slider .swiper-slide img {
+  @apply block w-full h-[488px] object-cover rounded-[8px];
+}
+
+.campaign-slider .swiper-pagination-bullet {
+  @apply bg-[#E0EBD3] w-[46.5px] h-[4.55px] rounded-[1.5px] opacity-100;
+}
+
+.campaign-slider .swiper-pagination-bullet-active {
+  @apply bg-[#ee9e02] w-[93px] h-[4.55px] rounded-[1.5px];
+}
+
+/********************** Media page Events slider **********************/
+
+.events-slider .swiper-slide {
+  @apply max-w-[387px];
+}
+
+.events-slide-date {
+  @apply mt-[22px] mb-2 font-lato text-[#D6D4D4] leading-[20px] text-[14px];
+}
+
+.events-slide-description {
+  @apply mb-6 font-lato text-white font-bold leading-[24px] text-[16px] text-ellipsis line-clamp-4;
+}
+
+.events-slide-button {
+  @apply py-1 px-9 font-lato text-black bg-grey-light rounded-[50px] font-bold inline-flex leading-[18px] text-[12px];
+}
+
+.events-slider-nav-button {
+  @apply size-[40px] md:size-[52px] border-[1.3px] border-solid border-black/65 rounded-full flex justify-center items-center shadow-lg transition-colors duration-300 ease-in-out;
+}
+.next-prev-svg {
+  @apply max-w-[14px] md:max-w-[31px];
+}
+.events-slider .swiper-button-next::after,
+.swiper-button-prev::after {
+  display: none;
+}
+
