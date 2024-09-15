@@ -3,39 +3,186 @@
 @tailwind utilities;
 
 :root {
-  --primary: #ee9e02;
-  --secondary: #3d402c;
+  --primary: #EE9E02;
   --heading: #212121;
-  --green-light: #e0ebd3;
-  --grey-dark: #616161;
-  --grey-mid: #9e9e9e;
-  --grey-light: #d2d2d2;
-  --grey-border: #6e6a64;
+  --secondary: #3D402C;
+  --green-light: #E0EBD3;
+  --text: #616161;
+  --ash-mid: #6e6964;
+  --ash-light: #D6D4D4;
+  --grey-dark: #6e6a64;
+  --grey-mid: #9E9E9E;
+  --grey-light: #D2D2D2;
 }
 
-@import url("https://fonts.googleapis.com/css2?family=Newsreader:wght@400;700&display=swap");
+html {
+  scroll-behavior: smooth;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Newsreader:wght@400;700&display=swap');
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;700&display=swap');
+
+/********************** Global **********************/
+.heading {
+  @apply text-heading text-[32px] lg:text-[42px] font-medium font-archivo capitalize leading-[50.40px]
+}
+
+.sub-heading {
+  @apply text-ash-dark text-[24px] font-bold font-lato capitalize leading-[28.80px]
+}
+
+.description {
+  @apply text-ash-dark text-base font-normal font-lato capitalize leading-[28.80px]
+}
 
 .custom-container {
-  @apply mx-auto  max-w-[1440px];
+  @apply max-w-[1440px] px-4 2xl:px-20 mx-auto
+}
+
+.dynamic-pl {
+  padding-left: calc((100vw - 1440px) / 2);
+}
+
+.no-scrollbar {
+  scrollbar-width: none;
+  /* Firefox */
+  -ms-overflow-style: none;
+  /* Internet Explorer 10+ */
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Custom scrollbar for Chrome, Edge, and Safari */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 10px;
+  /* Width of the entire scrollbar */
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  /* Color of the scrollbar track */
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #6e6a64;
+  /* Color of the scrollbar thumb */
+  border-radius: 10px;
+  border: 2px solid #f1f1f1;
+  /* Space between thumb and track */
+}
+
+/* Scrollbar styles for Firefox */
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #6e6a64 #f1f1f1;
+  /* thumb color | track color */
+}
+
+/* 
+.dynamic-pr {
+    padding-right: calc((100vw - 1440px) / 2);
+} */
+
+.custom-dropdown {
+  @apply relative inline-flex w-full md:max-w-[257px]
+}
+
+.custom-dropdown-title {
+  @apply w-[201px] text-heading text-sm font-normal font-lato capitalize leading-[21px]
+}
+
+.dropdown-menu {
+  @apply opacity-0 min-w-60 bg-white z-50 shadow-md rounded-lg p-1 space-y-0.5 mt-2 divide-y divide-gray-200 w-full md:max-w-[257px]
+}
+
+.dropdown-list {
+  @apply max-h-[300px] overflow-auto w-full md:max-w-[257px]
+}
+
+.dropdown-btn {
+  @apply w-full md:max-w-[257px] py-3 px-4 inline-flex justify-between items-center gap-x-2 text-sm font-medium rounded-[4px] border border-solid border-ash-light bg-white text-heading shadow-sm
+}
+
+
+
+.dropdown-list {
+  @apply py-2
+}
+
+.dropdown-item {
+  @apply flex items-center gap-x-3.5 py-2 px-3 rounded-lg text-sm text-gray-800 cursor-pointer
 }
 
 /********************** Home page Imagine slider **********************/
 
 .imagine-slider .swiper-slide {
-  @apply border-t-[1px] border-grey-border border-solid;
+  @apply border-t-[1px] border-grey-dark border-solid;
 }
 
 .imagine-slide-title {
-  @apply py-4 font-newsreader text-grey-border font-bold leading-[21px] text-[18px];
+  @apply py-4 font-newsreader text-grey-dark font-bold leading-[21px] text-[18px];
+}
+
+
+.imagine-slider-nav-button {
+  @apply mx-auto text-center size-[40px] md:size-[52px] border-[1.3px] border-solid border-black/65 rounded-full flex justify-center items-center shadow-lg transition-colors duration-300 ease-in-out;
+}
+
+.next-prev-svg {
+  @apply max-w-[14px] md:max-w-[31px]
+}
+
+.imagine-slider .swiper-button-next::after,
+.swiper-button-prev::after {
+  display: none;
+}
+
+/*================ Home hero slider CSS ================*/
+.home-hero-sliders .swiper-pagination.swiper-pagination-clickable.swiper-pagination-bullets.swiper-pagination-horizontal {
+  @apply !mb-3;
+}
+
+.home-hero-sliders .swiper-pagination-bullet {
+  @apply shadow-[0px_1px_4px_0px_#0000002e] !transition-[all] duration-500 ease-in-out;
+}
+
+.home-hero-sliders .swiper-pagination-bullet.swiper-pagination-bullet-active {
+  @apply !w-20 !rounded-[20px];
+}
+
+/*================ Basic global button CSS ================*/
+.transperant-primary-btn .elementor-button-content-wrapper {
+  @apply items-center;
+}
+
+.transperant-primary-btn .elementor-button-icon {
+  @apply p-[21px] bg-[--primary] rounded-full;
+}
+
+
+
+/********************** Home page Imagine slider **********************/
+
+.imagine-slider .swiper-slide {
+  @apply border-t-[1px] border-grey-dark border-solid;
+}
+
+.imagine-slide-title {
+  @apply py-4 font-newsreader text-grey-dark font-bold leading-[21px] text-[18px];
 }
 
 .imagine-slider-nav-button {
   @apply mx-auto text-center size-[40px] md:size-[52px] border-[1.3px] border-solid border-black/65 rounded-full flex justify-center items-center shadow-lg transition-colors duration-300 ease-in-out;
 }
+
 .next-prev-svg {
   @apply max-w-[14px] md:max-w-[31px];
 }
+
 .imagine-slider .swiper-button-next::after,
 .swiper-button-prev::after {
   display: none;
@@ -43,7 +190,7 @@
 
 /********************** Home page Campaign slider **********************/
 .campaign-slider .swiper-slide {
-  @apply text-center text-[18px] bg-white flex justify-center items-center rounded-[8px] shadow-[0_4px_10px_rgba(0,0,0,0.1)];
+  @apply text-center text-[18px] bg-white flex justify-center items-center rounded-[8px];
 }
 
 .campaign-slider .swiper-slide img {
@@ -57,6 +204,9 @@
 .campaign-slider .swiper-pagination-bullet-active {
   @apply bg-[#ee9e02] w-[93px] h-[4.55px] rounded-[1.5px];
 }
+
+
+
 
 /********************** Media page Events slider **********************/
 
@@ -79,11 +229,258 @@
 .events-slider-nav-button {
   @apply size-[40px] md:size-[52px] border-[1.3px] border-solid border-black/65 rounded-full flex justify-center items-center shadow-lg transition-colors duration-300 ease-in-out;
 }
-.next-prev-svg {
-  @apply max-w-[14px] md:max-w-[31px];
-}
+
 .events-slider .swiper-button-next::after,
 .swiper-button-prev::after {
   display: none;
 }
 
+
+
+
+/********************** Career page **********************/
+
+.custom-sticky {
+  position: -webkit-sticky;
+  position: sticky;
+}
+
+.sm-card {
+  @apply cursor-pointer border border-[#B9B9B9] hover:border-black border-solid h-[176px] w-full md:w-[363px] flex items-center justify-center
+}
+
+.page-scroll-item {
+  @apply block p-4 text-ash-dark text-lg font-medium font-newsreader leading-[27px] capitalize hover:text-black border-solid border-[#D6D4D4] border-l-[3px] hs-scrollspy-active:border-l-[3px] hs-scrollspy-active:border-primary hover:no-underline focus:outline-none focus:text-black hs-scrollspy-active:text-black
+}
+
+.mobile-page-scroll-item {
+  @apply py-2 px-3 rounded-lg text-sm text-heading
+}
+
+/* .page-scroll-item{
+  @apply p-4 block text-ash-dark text-lg font-medium font-newsreader capitalize hover:border leading-[27px] focus:outline-none  hs-scrollspy-active:border-l-primary
+} */
+
+.stand-for-card {
+  @apply flex gap-16 max-w-[400px]
+}
+
+.stand-for-title {
+  @apply text-primary text-2xl font-bold font-lato capitalize leading-[28.80px]
+}
+
+.stand-for-description {
+  @apply text-ash-dark text-base font-normal font-lato capitalize leading-normal
+}
+
+.beyond-work-slider .swiper-button-next::after,
+.swiper-button-prev::after {
+  display: none;
+}
+
+.stat-card {
+  @apply flex flex-col justify-start items-center gap-3 min-w-[215px]
+}
+
+.stat-card h3 {
+  @apply text-primary text-[54px] font-medium font-archivo capitalize leading-[64.80px]
+}
+
+.stat-card h5 {
+  @apply text-ash-dark text-lg font-bold font-newsreader capitalize leading-[21px]
+}
+
+.employee-testimonial {
+  @apply p-8 border-[.5px] border-solid border-grey-dark rounded-[4px] flex flex-col items-center justify-center
+}
+
+.employee-testimonial img {
+  @apply size-12 mb-10
+}
+
+.employee-testimonial p {
+  @apply w-full max-w-[596px] text-center text-ash-mid text-lg font-medium font-newsreader capitalize leading-[27px] mb-4
+}
+
+.employee-testimonial h6 {
+  @apply text-center text-heading text-lg font-bold font-newsreader capitalize leading-[21px]
+}
+
+.cxo-slider .swiper-button-next::after,
+.swiper-button-prev::after {
+  display: none;
+}
+
+.cxo-slider .swiper-slide img {
+  height: 390px;
+  width: 330px;
+}
+
+.cxo-slider .swiper-slide-active img {
+  transform: scale(1.2);
+}
+
+.cxo-slider .swiper-slide-next img,
+.swiper-slide-prev img {
+  transform: scale(0.8);
+}
+
+.cxo-slider .swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s;
+  position: relative;
+  flex-direction: column;
+}
+
+.cxo-details {
+  @apply flex flex-col justify-center items-center mt-[70px]
+}
+
+.cxo-details h5 {
+  @apply text-center text-heading text-[24px] font-bold font-lato capitalize leading-[28.80px]
+}
+
+.cxo-details h6 {
+  @apply text-center text-ash-dark text-[24px] font-medium font-newsreader leading-loose
+}
+
+.thumb-gallery-slider .swiper-button-next::after,
+.swiper-button-prev::after {
+  display: none;
+}
+
+.thumb-gallery-slider .swiper-slide img {
+  @apply h-[250px] md:h-[498px] w-full
+}
+
+.thumb-gallery-slider .swiper-slide iframe {
+  @apply h-[250px] md:h-[498px] w-full
+}
+
+.thumb-slider .swiper-slide {
+  @apply h-[122px] w-[216px] cursor-pointer
+}
+
+
+.iframe-wrapper {
+  @apply relative w-full h-full;
+}
+
+.iframe-wrapper iframe {
+  @apply w-full h-full;
+}
+
+.iframe-overlay {
+  @apply absolute top-0 left-0 w-full h-full bg-transparent z-[20];
+}
+
+
+
+/*================== Large event card CSS ==================*/
+.event-card:hover .event-img {
+  @apply scale-105;
+}
+
+.event-card:hover .event-heading {
+  @apply text-primary;
+}
+
+/*================== Small event card CSS ==================*/
+.event-sm-card:hover .event-img {
+  @apply scale-[1.02];
+}
+
+
+/*==================== Custom checkbox CSS ==================*/
+.inspect-zone {
+  @apply relative cursor-pointer select-none flex w-full justify-between items-center;
+}
+
+.inspect-zone input {
+  @apply absolute opacity-0 cursor-pointer h-0 w-0;
+}
+
+.checkmark {
+  @apply absolute h-6 w-6 rounded bg-white border-2 border-solid border-ash-dark right-0 top-0 after:content-[""] after:absolute after:hidden;
+}
+
+.inspect-zone:hover input~.checkmark {
+  @apply bg-white;
+}
+
+.inspect-zone input:checked~.checkmark {
+  @apply bg-primary border-2 border-solid border-primary after:block;
+}
+
+.inspect-zone .checkmark:after {
+  @apply w-[5px] h-2.5 rotate-45 border-white border-t-0 border-r-2 border-b-2 border-l-0 left-2 top-1;
+}
+
+
+
+
+
+/********************** Get in touch page **********************/
+
+#map {
+  height: 400px;
+  width: 100%;
+}
+
+
+/* .berger-point{
+  @apply w-full max-w-[416px] h-[236px] flex-col justify-start items-start gap-4 inline-flex
+}
+
+.berger-point h4{
+  @apply text-heading text-[24px] font-medium font-newsreader leading-loose
+}
+
+.berger-point p{
+  @apply text-ash-dark text-[18px] font-normal font-lato capitalize leading-[27px]
+}
+
+.berger-point-card{
+  @apply w-full max-w-[416px] h-[236px] flex-col justify-start items-start gap-4 inline-flex
+}
+
+.berger-point-card h4{
+  @apply text-heading text-[24px] font-medium font-newsreader leading-loose
+}
+
+.berger-point-card p{
+  @apply text-ash-dark text-[18px] font-normal font-lato capitalize leading-[27px]
+} */
+
+
+
+/* Heading style used across different components */
+.point-heading {
+  @apply text-heading text-[24px] font-medium font-newsreader leading-loose;
+}
+
+/* Paragraph style used across different components */
+.point-paragraph {
+  @apply text-ash-dark text-[18px] font-normal font-lato capitalize leading-[27px] line-clamp-4;
+}
+
+/* Apply the generic styles to .berger-point and .berger-point-card */
+.berger-point {
+  @apply w-full xl:min-w-[416px] max-w-[416px] h-[236px] flex-col justify-start items-start gap-4 inline-flex;
+}
+
+.berger-point-card {
+  @apply w-full xl:min-w-[416px] max-w-[416px] h-[288px] p-6 flex-col justify-start items-start gap-4 flex bg-[#F1F5F9];
+}
+
+.berger-point h4,
+.berger-point-card h4 {
+  @apply point-heading;
+}
+
+.berger-point p,
+.berger-point-card p {
+  @apply point-paragraph;
+}

@@ -1,0 +1,1082 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Berger | Home</title>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link href="./assets/css/output.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+
+    
+
+    
+  </style>
+</head>
+
+<body class="">
+  <section class="w-full my-6">
+    <div class="custom-container my-8">
+      <h1 class="heading mb-8">Experience Zone</h1>
+      <div class="flex flex-col md:flex-row gap-4 items-center">
+        <div class="flex flex-col gap-2 w-full md:max-w-[257px]">
+          <p class="custom-dropdown-title">Division</p>
+          <div id="experience-division-dropdown" class="hs-dropdown custom-dropdown">
+            <button id="hs-dropdown-with-icons" type="button"
+              class="hs-dropdown-toggle dropdown-btn hover:bg-gray-50 hover:text-black  focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none hover:border-heading"
+              aria-haspopup="menu" aria-expanded="false" aria-label="Dropdown">
+              <span class="selected-dropdown-item">Select Division</span>
+              <svg class="hs-dropdown-open:rotate-180 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                viewBox="0 0 24 24" fill="none">
+                <path d="M7.41 8.58008L12 13.1701L16.59 8.58008L18 10.0001L12 16.0001L6 10.0001L7.41 8.58008Z"
+                  fill="#212121" />
+                <path d="M7.41 8.58008L12 13.1701L16.59 8.58008L18 10.0001L12 16.0001L6 10.0001L7.41 8.58008Z" fill="black"
+                  fill-opacity="0.2" />
+              </svg>
+            </button>
+    
+            <div
+              class=" hs-dropdown-menu transition-[opacity,margin] duration hs-dropdown-open:opacity-100 opacity-0 hidden dropdown-menu"
+              role="menu" aria-orientation="vertical" aria-labelledby="hs-dropdown-with-icons">
+              <ul class="dropdown-item-list dropdown-list">
+                <!-- <li class="dropdown-item hover:bg-gray-100">Newsletter</li> -->
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="flex flex-col gap-2 w-full md:max-w-[257px]">
+          <p class="custom-dropdown-title">District</p>
+          <div id="experience-district-dropdown" class="hs-dropdown custom-dropdown">
+            <button id="hs-dropdown-with-icons" type="button"
+              class="hs-dropdown-toggle dropdown-btn hover:bg-gray-50 hover:text-black  focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none hover:border-heading"
+              aria-haspopup="menu" aria-expanded="false" aria-label="Dropdown">
+              <span class="selected-dropdown-item">Select District</span>
+              <svg class="hs-dropdown-open:rotate-180 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                viewBox="0 0 24 24" fill="none">
+                <path d="M7.41 8.58008L12 13.1701L16.59 8.58008L18 10.0001L12 16.0001L6 10.0001L7.41 8.58008Z"
+                  fill="#212121" />
+                <path d="M7.41 8.58008L12 13.1701L16.59 8.58008L18 10.0001L12 16.0001L6 10.0001L7.41 8.58008Z" fill="black"
+                  fill-opacity="0.2" />
+              </svg>
+            </button>
+    
+            <div
+              class=" hs-dropdown-menu transition-[opacity,margin] duration hs-dropdown-open:opacity-100 opacity-0 hidden dropdown-menu"
+              role="menu" aria-orientation="vertical" aria-labelledby="hs-dropdown-with-icons">
+              <ul class="dropdown-item-list dropdown-list">
+                <!-- <li class="dropdown-item hover:bg-gray-100">Dhaka</li> -->
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+      <div id="experience-section" class="flex flex-col lg:flex-row gap-4 mt-8 min-h-[460px]  xl:max-h-[830px]">
+        <div id="experience-list"
+          class="flex flex-col gap-8 overflow-auto custom-scrollbar max-h-[460px] xl:max-h-[830px] xl:min-w-[416px] max-w-[416px]">
+    
+        </div>
+        <div id="experience-map" class="w-full  mb-6"></div>
+      </div>
+    
+      <div id="no-eperience-found" class="hidden text-center mt-8 text-heading py-10 min-h-[460px]">
+        <p class="text-xl font-semibold">No Content Found</p>
+        <p>There are no experience zones available at the moment.</p>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <!-- Initialize Swiper -->
+  <script>
+    const divisions = [
+        {
+          name: "Barishal",
+          districts: [
+            "Barguna",
+            "Barishal",
+            "Bhola",
+            "Jhalokathi",
+            "Patuakhali",
+            "Pirojpur",
+          ],
+        },
+        {
+          name: "Chattogram",
+          districts: [
+            "Bandarban",
+            "Brahmanbaria",
+            "Chandpur",
+            "Chattogram",
+            "Cumilla",
+            "Cox's Bazar",
+            "Feni",
+            "Khagrachari",
+            "Lakshmipur",
+            "Noakhali",
+            "Rangamati",
+          ],
+        },
+        {
+          name: "Dhaka",
+          districts: [
+            "Dhaka",
+            "Faridpur",
+            "Gazipur",
+            "Gopalganj",
+            "Jamalpur",
+            "Kishoreganj",
+            "Madaripur",
+            "Manikganj",
+            "Munshiganj",
+            "Mymensingh",
+            "Narayanganj",
+            "Narsingdi",
+            "Netrokona",
+            "Rajbari",
+            "Shariatpur",
+            "Sherpur",
+            "Tangail",
+          ],
+        },
+        {
+          name: "Khulna",
+          districts: [
+            "Bagerhat",
+            "Chuadanga",
+            "Jashore",
+            "Jhenaidah",
+            "Khulna",
+            "Kushtia",
+            "Magura",
+            "Meherpur",
+            "Narail",
+            "Satkhira",
+          ],
+        },
+        {
+          name: "Mymensingh",
+          districts: ["Jamalpur", "Mymensingh", "Netrokona", "Sherpur"],
+        },
+        {
+          name: "Rajshahi",
+          districts: [
+            "Bogura",
+            "Chapainawabganj",
+            "Joypurhat",
+            "Naogaon",
+            "Natore",
+            "Pabna",
+            "Rajshahi",
+            "Sirajganj",
+          ],
+        },
+        {
+          name: "Rangpur",
+          districts: [
+            "Dinajpur",
+            "Gaibandha",
+            "Kurigram",
+            "Lalmonirhat",
+            "Nilphamari",
+            "Panchagarh",
+            "Rangpur",
+            "Thakurgaon",
+          ],
+        },
+        {
+          name: "Sylhet",
+          districts: ["Habiganj", "Moulvibazar", "Sunamganj", "Sylhet"],
+        },
+      ];
+
+      const districtsLatLng = [
+        {
+          district: "Dhaka",
+          latitude: 23.8103,
+          longitude: 90.4125,
+        },
+        {
+          district: "Faridpur",
+          latitude: 23.6079,
+          longitude: 89.842,
+        },
+        {
+          district: "Gazipur",
+          latitude: 23.9999,
+          longitude: 90.4203,
+        },
+        {
+          district: "Gopalganj",
+          latitude: 23.0051,
+          longitude: 89.826,
+        },
+        {
+          district: "Jamalpur",
+          latitude: 24.9371,
+          longitude: 89.9372,
+        },
+        {
+          district: "Kishoreganj",
+          latitude: 24.4449,
+          longitude: 90.7766,
+        },
+        {
+          district: "Madaripur",
+          latitude: 23.1641,
+          longitude: 90.1897,
+        },
+        {
+          district: "Manikganj",
+          latitude: 23.8614,
+          longitude: 90.0047,
+        },
+        {
+          district: "Munshiganj",
+          latitude: 23.5422,
+          longitude: 90.5305,
+        },
+        {
+          district: "Mymensingh",
+          latitude: 24.7471,
+          longitude: 90.4203,
+        },
+        {
+          district: "Narayanganj",
+          latitude: 23.6238,
+          longitude: 90.499,
+        },
+        {
+          district: "Narsingdi",
+          latitude: 23.9322,
+          longitude: 90.7183,
+        },
+        {
+          district: "Netrokona",
+          latitude: 24.8835,
+          longitude: 90.7276,
+        },
+        {
+          district: "Rajbari",
+          latitude: 23.7574,
+          longitude: 89.6444,
+        },
+        {
+          district: "Shariatpur",
+          latitude: 23.223,
+          longitude: 90.3487,
+        },
+        {
+          district: "Sherpur",
+          latitude: 25.0205,
+          longitude: 90.0176,
+        },
+        {
+          district: "Tangail",
+          latitude: 24.3917,
+          longitude: 89.9941,
+        },
+        {
+          district: "Bandarban",
+          latitude: 22.1953,
+          longitude: 92.2184,
+        },
+        {
+          district: "Brahmanbaria",
+          latitude: 23.9571,
+          longitude: 91.1111,
+        },
+        {
+          district: "Chandpur",
+          latitude: 23.2333,
+          longitude: 90.671,
+        },
+        {
+          district: "Chittagong",
+          latitude: 22.3569,
+          longitude: 91.7832,
+        },
+        {
+          district: "Comilla",
+          latitude: 23.4689,
+          longitude: 91.1789,
+        },
+        {
+          district: "Cox's Bazar",
+          latitude: 21.4272,
+          longitude: 92.0058,
+        },
+        {
+          district: "Feni",
+          latitude: 23.0159,
+          longitude: 91.3976,
+        },
+        {
+          district: "Khagrachari",
+          latitude: 23.1092,
+          longitude: 91.9847,
+        },
+        {
+          district: "Lakshmipur",
+          latitude: 22.9426,
+          longitude: 90.8412,
+        },
+        {
+          district: "Noakhali",
+          latitude: 22.8696,
+          longitude: 91.0995,
+        },
+        {
+          district: "Rangamati",
+          latitude: 22.6369,
+          longitude: 92.2033,
+        },
+        {
+          district: "Bogura",
+          latitude: 24.8466,
+          longitude: 89.3773,
+        },
+        {
+          district: "Chapainawabganj",
+          latitude: 24.5965,
+          longitude: 88.277,
+        },
+        {
+          district: "Joypurhat",
+          latitude: 25.101,
+          longitude: 89.0227,
+        },
+        {
+          district: "Naogaon",
+          latitude: 24.7936,
+          longitude: 88.9318,
+        },
+        {
+          district: "Natore",
+          latitude: 24.4206,
+          longitude: 89.0,
+        },
+        {
+          district: "Pabna",
+          latitude: 23.9985,
+          longitude: 89.2335,
+        },
+        {
+          district: "Rajshahi",
+          latitude: 24.3745,
+          longitude: 88.6042,
+        },
+        {
+          district: "Sirajganj",
+          latitude: 24.4569,
+          longitude: 89.7087,
+        },
+        {
+          district: "Bagerhat",
+          latitude: 22.6512,
+          longitude: 89.7852,
+        },
+        {
+          district: "Chuadanga",
+          latitude: 23.6401,
+          longitude: 88.8418,
+        },
+        {
+          district: "Jessore",
+          latitude: 23.1667,
+          longitude: 89.208,
+        },
+        {
+          district: "Jhenaidah",
+          latitude: 23.544,
+          longitude: 89.173,
+        },
+        {
+          district: "Khulna",
+          latitude: 22.8456,
+          longitude: 89.5403,
+        },
+        {
+          district: "Kushtia",
+          latitude: 23.9013,
+          longitude: 89.12,
+        },
+        {
+          district: "Magura",
+          latitude: 23.4873,
+          longitude: 89.419,
+        },
+        {
+          district: "Meherpur",
+          latitude: 23.7911,
+          longitude: 88.6318,
+        },
+        {
+          district: "Narail",
+          latitude: 23.1725,
+          longitude: 89.4982,
+        },
+        {
+          district: "Satkhira",
+          latitude: 22.7185,
+          longitude: 89.0705,
+        },
+        {
+          district: "Barguna",
+          latitude: 22.153,
+          longitude: 90.125,
+        },
+        {
+          district: "Barisal",
+          latitude: 22.701,
+          longitude: 90.3535,
+        },
+        {
+          district: "Bhola",
+          latitude: 22.69,
+          longitude: 90.65,
+        },
+        {
+          district: "Jhalokathi",
+          latitude: 22.6405,
+          longitude: 90.2008,
+        },
+        {
+          district: "Patuakhali",
+          latitude: 22.3596,
+          longitude: 90.3292,
+        },
+        {
+          district: "Pirojpur",
+          latitude: 22.579,
+          longitude: 89.975,
+        },
+        {
+          district: "Habiganj",
+          latitude: 24.378,
+          longitude: 91.4129,
+        },
+        {
+          district: "Moulvibazar",
+          latitude: 24.4896,
+          longitude: 91.7729,
+        },
+        {
+          district: "Sunamganj",
+          latitude: 25.0658,
+          longitude: 91.395,
+        },
+        {
+          district: "Sylhet",
+          latitude: 24.8949,
+          longitude: 91.8687,
+        },
+        {
+          district: "Dinajpur",
+          latitude: 25.627,
+          longitude: 88.6376,
+        },
+        {
+          district: "Gaibandha",
+          latitude: 25.3297,
+          longitude: 89.543,
+        },
+        {
+          district: "Kurigram",
+          latitude: 25.8054,
+          longitude: 89.6362,
+        },
+        {
+          district: "Lalmonirhat",
+          latitude: 25.9923,
+          longitude: 89.2847,
+        },
+        {
+          district: "Nilphamari",
+          latitude: 25.9293,
+          longitude: 88.856,
+        },
+        {
+          district: "Panchagarh",
+          latitude: 26.3411,
+          longitude: 88.5542,
+        },
+        {
+          district: "Rangpur",
+          latitude: 25.7439,
+          longitude: 89.2752,
+        },
+        {
+          district: "Thakurgaon",
+          latitude: 26.0337,
+          longitude: 88.4617,
+        },
+      ];
+
+      const experienceZones = [
+        {
+          name: "Berger Experience Zone Dhanmondi",
+          address:
+            "BTI Lake Palisade, Plot-23, Road-27(Old), Level-3, Dhanmondi",
+          mapLink: "https://maps.app.goo.gl/BRYYBbbR8DrYah3SA",
+          division: "Dhaka",
+          district: "Dhaka",
+          phone: "",
+          latitude: 23.7532501,
+          longitude: 90.3652459,
+        },
+        {
+          name: "Berger Experience Zone Sylhet",
+          address: "Al-Famsa Shopping Center, Naya Sarak Point,Sylhet",
+          mapLink: "https://maps.app.goo.gl/NsytfiULCJb7N8N68",
+          division: "Sylhet",
+          district: "Sylhet",
+          phone: "",
+          latitude: 24.8996527,
+          longitude: 91.8749172,
+        },
+        {
+          name: "Berger Experience Zone Naryanganj",
+          address:
+            "Jahanara Garden,1st Floor,(Sky kitchen Restaurant Building), House no-4, Sabbir Alam Khondokar Road,Masdiar, Naryanganj",
+          mapLink: "https://maps.app.goo.gl/3MntHFSXuRZAsunv5",
+          division: "Dhaka",
+          district: "Narayanganj",
+          phone: "",
+          latitude: 23.6257989,
+          longitude: 90.4900179,
+        },
+        {
+          name: "Berger Experience Zone Bogura",
+          address:
+            "H#176/2(1st Floor), Shaheed Abdul Jabbar Road,Joleshori Tola Bogura-5800",
+          mapLink: "https://maps.app.goo.gl/3KfMQzuSwjXyowVo6",
+          division: "Rajshahi",
+          district: "Bogura",
+          phone: "",
+          latitude: 24.844971,
+          longitude: 89.3749041,
+        },
+        {
+          name: "Berger Experience Zone Bashundhara",
+          address:
+            "Ranks Business Centre, Plot-Ka-218/1-2, West Side(2nd Floor), Paragati Sarani Main Road, Kuril, Dhaka-1229",
+          mapLink: "https://maps.app.goo.gl/H9sEseLanTR8hwB39",
+          division: "Dhaka",
+          district: "Dhaka",
+          phone: "",
+          latitude: 23.8699054,
+          longitude: 90.1026964,
+        },
+        {
+          name: "Berger Experience Zone Uttara",
+          address:
+            "8, Garib E Newaz Avenue, Level - 3, Sector-13,Uttara-1230, Dhaka",
+          mapLink: "https://maps.app.goo.gl/rg5Co8Tgzo5Sb4Vv5",
+          division: "Dhaka",
+          district: "Dhaka",
+          phone: "",
+          latitude: 23.8699054,
+          longitude: 90.1026964,
+        },
+        {
+          name: "Berger Experience Zone Cox's Bazar",
+          address:
+            "Mahiya Tower, 1st Floor, In front of BGB Camp, Ward No: 05, Cox's Bazar Sadar, Cox's Bazar, Chattogram",
+          mapLink: "https://maps.app.goo.gl/wLnNu4vEVH6kG2347",
+          division: "Chittagong",
+          district: "Cox's Bazar",
+          phone: "",
+          latitude: 21.4084117,
+          longitude: 91.9842598,
+        },
+        {
+          name: "Berger Experience Zone Rajshahi",
+          address:
+            "Holding No. 32, Ashirbad Tower, 2nd Floor, Ganakpara, Ranibazar Road,  P.O : Ghoramara, Thana : Boalia, Rajshahi",
+          mapLink: "https://maps.app.goo.gl/DRJb6mmWUwHvDkW1A",
+          division: "Rajshahi",
+          district: "Rajshahi",
+          phone: "",
+          latitude: 24.3674086,
+          longitude: 88.6013279,
+        },
+        {
+          name: "Berger Experience Zone Shanta Forum",
+          address:
+            "Shanta Forum,East Tower Level-2, 187-188B , Bir Uttam Mir Shawkat Sarak,Tejgaon, Dhaka-1208.",
+          mapLink: "https://maps.app.goo.gl/KittRFQ1neJtui9y9",
+          division: "Dhaka",
+          district: "Dhaka",
+          phone: "",
+          latitude: 23.7703684,
+          longitude: 90.3978218,
+        },
+        {
+          name: "Berger Experience Zone Cumilla",
+          address:
+            "M. Ali Tower, House#858, Nazrul Avenue, Ranir Bazar, Cumilla",
+          mapLink: "https://maps.app.goo.gl/vgxFX4w8c71vmhjT7",
+          division: "Cumilla",
+          district: "Cumilla",
+          phone: "",
+          latitude: 23.4582038,
+          longitude: 91.1743153,
+        },
+      ];
+
+      const dealerZones = [
+        {
+          name: "Berger Experience Zone Dhanmondi",
+          address:
+            "BTI Lake Palisade, Plot-23, Road-27(Old), Level-3, Dhanmondi",
+          mapLink: "https://maps.app.goo.gl/BRYYBbbR8DrYah3SA",
+          division: "Dhaka",
+          district: "Dhaka",
+          phone: "",
+          latitude: 23.7532501,
+          longitude: 90.3652459,
+        },
+        {
+          name: "Berger Experience Zone Sylhet",
+          address: "Al-Famsa Shopping Center, Naya Sarak Point,Sylhet",
+          mapLink: "https://maps.app.goo.gl/NsytfiULCJb7N8N68",
+          division: "Sylhet",
+          district: "Sylhet",
+          phone: "",
+          latitude: 24.8996527,
+          longitude: 91.8749172,
+        },
+        {
+          name: "Berger Experience Zone Naryanganj",
+          address:
+            "Jahanara Garden,1st Floor,(Sky kitchen Restaurant Building), House no-4, Sabbir Alam Khondokar Road,Masdiar, Naryanganj",
+          mapLink: "https://maps.app.goo.gl/3MntHFSXuRZAsunv5",
+          division: "Dhaka",
+          district: "Narayanganj",
+          phone: "",
+          latitude: 23.6257989,
+          longitude: 90.4900179,
+        },
+        {
+          name: "Berger Experience Zone Bogura",
+          address:
+            "H#176/2(1st Floor), Shaheed Abdul Jabbar Road,Joleshori Tola Bogura-5800",
+          mapLink: "https://maps.app.goo.gl/3KfMQzuSwjXyowVo6",
+          division: "Rajshahi",
+          district: "Bogura",
+          phone: "",
+          latitude: 24.844971,
+          longitude: 89.3749041,
+        },
+        {
+          name: "Berger Experience Zone Bashundhara",
+          address:
+            "Ranks Business Centre, Plot-Ka-218/1-2, West Side(2nd Floor), Paragati Sarani Main Road, Kuril, Dhaka-1229",
+          mapLink: "https://maps.app.goo.gl/H9sEseLanTR8hwB39",
+          division: "Dhaka",
+          district: "Dhaka",
+          phone: "",
+          latitude: 23.8699054,
+          longitude: 90.1026964,
+        },
+        {
+          name: "Berger Experience Zone Uttara",
+          address:
+            "8, Garib E Newaz Avenue, Level - 3, Sector-13,Uttara-1230, Dhaka",
+          mapLink: "https://maps.app.goo.gl/rg5Co8Tgzo5Sb4Vv5",
+          division: "Dhaka",
+          district: "Dhaka",
+          phone: "",
+          latitude: 23.8699054,
+          longitude: 90.1026964,
+        },
+        {
+          name: "Berger Experience Zone Cox's Bazar",
+          address:
+            "Mahiya Tower, 1st Floor, In front of BGB Camp, Ward No: 05, Cox's Bazar Sadar, Cox's Bazar, Chattogram",
+          mapLink: "https://maps.app.goo.gl/wLnNu4vEVH6kG2347",
+          division: "Chittagong",
+          district: "Cox's Bazar",
+          phone: "",
+          latitude: 21.4084117,
+          longitude: 91.9842598,
+        },
+        {
+          name: "Berger Experience Zone Rajshahi",
+          address:
+            "Holding No. 32, Ashirbad Tower, 2nd Floor, Ganakpara, Ranibazar Road,  P.O : Ghoramara, Thana : Boalia, Rajshahi",
+          mapLink: "https://maps.app.goo.gl/DRJb6mmWUwHvDkW1A",
+          division: "Rajshahi",
+          district: "Rajshahi",
+          phone: "",
+          latitude: 24.3674086,
+          longitude: 88.6013279,
+        },
+        {
+          name: "Berger Experience Zone Shanta Forum",
+          address:
+            "Shanta Forum,East Tower Level-2, 187-188B , Bir Uttam Mir Shawkat Sarak,Tejgaon, Dhaka-1208.",
+          mapLink: "https://maps.app.goo.gl/KittRFQ1neJtui9y9",
+          division: "Dhaka",
+          district: "Dhaka",
+          phone: "",
+          latitude: 23.7703684,
+          longitude: 90.3978218,
+        },
+        {
+          name: "Berger Experience Zone Cumilla",
+          address:
+            "M. Ali Tower, House#858, Nazrul Avenue, Ranir Bazar, Cumilla",
+          mapLink: "https://maps.app.goo.gl/vgxFX4w8c71vmhjT7",
+          division: "Cumilla",
+          district: "Cumilla",
+          phone: "",
+          latitude: 23.4582038,
+          longitude: 91.1743153,
+        },
+      ];
+
+      function getMatchingZones(allZones, division, district) {
+        const matchingZones = allZones.filter((zone) => {
+          if (division === "" || zone.division === division) {
+            if (district === "" || zone.district === district) {
+              return true;
+            }
+          }
+          return false;
+        });
+
+        return matchingZones;
+      }
+
+      function initializeDropdownWithData({
+        dropdownId,
+        data,
+        onChangeHandler,
+        defaultValue = null,
+      }) {
+        // Get the dropdown element using the provided ID
+        const dropdownElement = document.getElementById(dropdownId);
+
+        if (!dropdownElement) {
+          console.error(`Dropdown with ID ${dropdownId} not found.`);
+          return;
+        }
+
+        // Select the dropdown list and selected item within the dropdown element using the provided dropdownId
+        const dropdownList = dropdownElement.querySelector(
+          ".dropdown-item-list"
+        );
+        const selectedTextContentElement = dropdownElement.querySelector(
+          ".selected-dropdown-item"
+        );
+        const dropdownButton = dropdownElement.querySelector("button");
+        const dropdownMenu = dropdownButton.nextElementSibling;
+
+        // Clear existing items in the dropdown list
+        dropdownList.innerHTML = "";
+
+        // Loop through the data and populate the dropdown
+        data.forEach((item) => {
+          const listItem = document.createElement("li");
+          listItem.textContent = item;
+          listItem.classList.add("dropdown-item", "hover:bg-gray-100");
+
+          // Add click event listener for each dropdown item
+          listItem.addEventListener("click", () => {
+            selectedTextContentElement.textContent = item; // Update selected item
+            dropdownMenu.classList.remove("hs-dropdown-open"); // Close the dropdown
+            onChangeHandler(item); // Trigger custom onChange handler
+          });
+
+          // Append the item to the dropdown list
+          dropdownList.appendChild(listItem);
+        });
+
+        // Set default value if provided, otherwise select the first item
+        if (defaultValue && data.includes(defaultValue)) {
+          selectedTextContentElement.textContent = defaultValue;
+          onChangeHandler(defaultValue); // Trigger the onChangeHandler for the default value
+        } else {
+          // If no default value or invalid, set to the first item in the data
+          selectedTextContentElement.textContent = data[0];
+          onChangeHandler(data[0]); // Trigger the onChangeHandler for the first item
+        }
+
+        // Add event listener to handle opening/closing of the dropdown
+        dropdownButton.addEventListener("click", () => {
+          dropdownMenu.classList.toggle("hs-dropdown-open");
+        });
+      }
+
+      // Initialize the division dropdown
+      initializeDropdownWithData({
+        dropdownId: "experience-division-dropdown",
+        data: divisions.map((division) => division.name),
+        defaultValue: "Dhaka",
+        onChangeHandler: (selectedDivisionName) => {
+          const selectedDivision = divisions.find(
+            (div) => div.name === selectedDivisionName
+          );
+          console.log("selectedDivision", selectedDivision?.districts);
+          const results = getMatchingZones(
+            experienceZones,
+            selectedDivisionName,
+            selectedDivision?.districts[0]
+          );
+          console.log("results", results);
+          // updateExperienceContent(results);
+          // Initialize the district dropdown when a division is selected
+          if (selectedDivision) {
+            initializeDropdownWithData({
+              dropdownId: "experience-district-dropdown",
+              data: selectedDivision?.districts,
+              defaultValue: selectedDivision?.districts[0], // Automatically select the first district
+              onChangeHandler: (selectedDistrictName) => {
+                console.log(
+                  "selectedDistrictName",
+                  selectedDistrictName
+                );
+                const results = getMatchingZones(
+                  experienceZones,
+                  selectedDivisionName,
+                  selectedDistrictName
+                );
+                console.log("results", results);
+                updateExperienceContent(results);
+              },
+            });
+          }
+        },
+      });
+
+      // Initialize the district dropdown for the default division (Dhaka)
+      const dhakaDistricts = divisions.find(
+        (division) => division.name === "Dhaka"
+      ).districts;
+
+      initializeDropdownWithData({
+        dropdownId: "experience-district-dropdown",
+        data: dhakaDistricts,
+        defaultValue: "Dhaka",
+        onChangeHandler: (selectedDistrictName) => {
+          console.log("selectedDistrictName", selectedDistrictName);
+          const results = getMatchingZones(
+            experienceZones,
+            "Dhaka",
+            selectedDistrictName
+          );
+          console.log("results", results);
+          updateExperienceContent(results);
+        },
+      });
+
+      const results = getMatchingZones(
+        experienceZones,
+        "Dhaka", //selectedDivisionName
+        "Dhaka" // selectedDistrictName
+      );
+      console.log("results", results);
+      updateExperienceContent(results);
+
+      //Free iFrame approach
+      // function initializeMap({ mapId, latitude, longitude, zoomLevel }) {
+      //     const mapContainer = document.getElementById(mapId);
+      //     const mapIframe = document.createElement("iframe");
+
+      //     // Dynamically generate the Google Maps embed URL with latitude, longitude, and zoom level
+      //     const mapUrl = `https://www.google.com/maps?q=${latitude},${longitude}&z=${zoomLevel}&output=embed`;
+
+      //     // Set the iframe properties
+      //     mapIframe.setAttribute("width", "100%");
+      //     mapIframe.setAttribute("height", "100%");
+      //     mapIframe.setAttribute("frameborder", "0");
+      //     mapIframe.setAttribute("style", "border:0");
+      //     mapIframe.setAttribute("allowfullscreen", "");
+      //     mapIframe.setAttribute("loading", "lazy");
+      //     mapIframe.setAttribute("src", mapUrl);
+
+      //     // Clear any previous map and append the new iframe
+      //     mapContainer.innerHTML = "";
+      //     mapContainer.appendChild(mapIframe);
+      // }
+      // initializeMap({
+      //     mapId: "experience-map", // ID of the map container element
+      //     latitude: 23.8698893, // Example latitude
+      //     longitude: 90.3910924, // Example longitude
+      //     zoomLevel: 12, // Example zoom level
+      // });
+
+      function initMap(mapSelector, initialLat, initialLng) {
+        const mapDiv = document.querySelector(mapSelector);
+        const latLng = new google.maps.LatLng(initialLat, initialLng);
+        const mapOptions = {
+          mapTypeId: google.maps.MapTypeId.ROADMAP,
+          disableDefaultUI: true, // Disable default UI controls
+          zoomControl: true, // Enable zoom control
+          scaleControl: true, // Enable scale control
+          center: latLng,
+          zoom: 8,
+        };
+
+        const map = new google.maps.Map(mapDiv, mapOptions);
+        return map;
+      }
+
+      const experienceMap = initMap("#experience-map", 23.813333, 90.433333);
+
+      function updateMap(map, locations) {
+        console.log("updateMap", map, locations);
+        const markers = [];
+        const bounds = new google.maps.LatLngBounds();
+        const maxZoomLevel = 12; // Set your maximum zoom level here
+
+        locations.forEach((location) => {
+          let position;
+
+          // Check if latitude and longitude are missing
+          if (location.latitude && location.longitude) {
+            position = new google.maps.LatLng(
+              location.latitude,
+              location.longitude
+            );
+          } else {
+            const districtData = districtsLatLng.find(
+              (district) => district.district === location.district
+            );
+            if (districtData) {
+              position = new google.maps.LatLng(
+                districtData.latitude,
+                districtData.longitude
+              );
+            } else {
+              console.error(
+                `Lat/Lng not found for district: ${location.district}`
+              );
+              return;
+            }
+          }
+
+          bounds.extend(position);
+
+          const marker = new google.maps.Marker({
+            position: position,
+            map: map,
+            title: location.name,
+          });
+
+          const infoWindow = new google.maps.InfoWindow({
+            content: `
+                    <div style="max-width: 300px; font-family: Arial, sans-serif; line-height: 1.5;">
+                    <h3 style="margin: 0 0 10px; font-size: 16px; color: #333;">${location.name
+              }</h3>
+                    <p style="margin: 5px 0;">
+                        <strong style="color: #212121;">Division:</strong> ${location.division
+              }
+                    </p>
+                    <p style="margin: 5px 0;">
+                        <strong style="color: #212121;">District:</strong> ${location.district
+              }
+                    </p>
+                    ${location.thana
+                ? `<p style="margin: 5px 0;"><strong style="color: #212121;">Thana:</strong> ${location.thana}</p>`
+                : ""
+              }
+                    <p style="margin: 5px 0;">
+                        <strong style="color: #212121;">Address:</strong> ${location.address
+              }
+                    </p>
+                    <p style="margin: 5px 0;">
+                        <strong style="color: #212121;">Phone:</strong> <a href="tel:${location.phone
+              }" style="">${location.phone}</a>
+                    </p>
+                    </div>
+                    `,
+          });
+
+          marker.addListener("click", function () {
+            markers.forEach((m) => m.infoWindow.close());
+            infoWindow.open(map, marker);
+          });
+
+          markers.push({ marker, infoWindow });
+        });
+
+        // Fit the map to the bounds of all markers
+        map.fitBounds(bounds);
+
+        // Add event listener to enforce maximum zoom level
+        google.maps.event.addListenerOnce(map, "bounds_changed", function () {
+          if (map.getZoom() > maxZoomLevel) {
+            map.setZoom(maxZoomLevel); // Adjust the zoom to the maximum allowed zoom level
+          }
+        });
+      }
+
+      function updateList(zonesArray) {
+        const experienceList = document.getElementById("experience-list");
+        experienceList.innerHTML = ""; // Clear any existing content
+
+        zonesArray.forEach((zone) => {
+          // Create the container div
+          const zoneDiv = document.createElement("div");
+          zoneDiv.classList.add("berger-point");
+
+          // Create the heading
+          const zoneHeading = document.createElement("h4");
+          zoneHeading.textContent = zone.name;
+
+          // Create the paragraph
+          const zoneParagraph = document.createElement("p");
+          zoneParagraph.innerHTML = `
+                    ${zone.address}<br>
+                    Phone Number: ${zone.phone}
+                `;
+
+          // Append heading and paragraph to the zoneDiv
+          zoneDiv.appendChild(zoneHeading);
+          zoneDiv.appendChild(zoneParagraph);
+
+          // Append zoneDiv to the experienceList
+          experienceList.appendChild(zoneDiv);
+        });
+      }
+
+      function updateExperienceContent(zonesArray) {
+        const experienceSection = document.getElementById("experience-section");
+        const noContentFound = document.getElementById("no-eperience-found");
+
+        if (zonesArray.length === 0) {
+          // Hide the experience section and show the 'No Content Found' message
+          experienceSection.style.display = "none";
+          noContentFound.classList.remove("hidden");
+          noContentFound.classList.add("flex items-center");
+        } else {
+          // Show the experience section and hide the 'No Content Found' message
+          experienceSection.style.display = "flex";
+          noContentFound.classList.add("hidden");
+          updateList(zonesArray);
+          // initializeMap({
+          //     mapId: "experience-map", // ID of the map container element
+          //     latitude: 23.8698893, // Example latitude
+          //     longitude: 90.3910924, // Example longitude
+          //     zoomLevel: 12, // Example zoom level
+          // });
+          updateMap(experienceMap, zonesArray);
+        }
+      }
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/preline@2.0.3/dist/preline.min.js"></script>
+</body>
+
+</html>
