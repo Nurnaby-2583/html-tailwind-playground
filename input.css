@@ -1,0 +1,258 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: 'vorwerk';
+    src: url('../assets/fonts/vorwerk-bold_1-webfont.woff2') format('woff2'),
+    url('../assets/fonts/vorwerk-bold_1-webfont.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+
+}
+
+
+@font-face {
+    font-family: 'vorwerk';
+    src: url('../assets/fonts/vorwerk-medium_1-webfont.woff2') format('woff2'),
+    url('../assets/fonts/vorwerk-medium_1-webfont.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+
+}
+
+
+@font-face {
+    font-family: 'vorwerk';
+    src: url('../assets/fonts/vorwerk-regular_1-webfont.woff2') format('woff2'),
+    url('../assets/fonts/vorwerk-regular_1-webfont.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+
+}
+
+
+@font-face {
+    font-family: 'vorwerk';
+    src: url('../assets/fonts/vorwerk-light_1-webfont.woff2') format('woff2'),
+    url('../assets/fonts/vorwerk-light_1-webfont.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+@media screen and (max-width: 1300px) and (min-width: 320px) {
+    .container {
+        max-width: 100%;
+    }
+}
+
+:root {
+    --primary-color: #00AC46;
+    --primary-dark-color: #079641;
+    --primary-light-color: #1cc460;
+    --secondary-color: #F9D400;
+    --secondary-dark-color: #F5A01E;
+    --accent-color: #F5A01E;
+    --black-color: #23282A;
+    --white-color: #FFFFFF;
+    --blue-color: #3782CD;
+    --pink-color: #F0415F;
+}
+
+
+/*overwrite default class style using base start*/
+@layer base {
+
+
+    body {
+        @apply break-words text-[16px] leading-[27px] text-black font-vorwerk;
+    }
+
+    p {
+        @apply text-[16px] leading-[28px] text-black;
+    }
+
+    .p-text {
+        @apply text-[18px] leading-[30px] text-black;
+    }
+
+    .container {
+        @apply mx-auto lg:px-3 px-[16px];
+    }
+
+    h1 {
+        @apply text-[60px] leading-[66px];
+    }
+
+    h2 {
+        @apply text-[48px] leading-[53px];
+    }
+
+    h3 {
+        @apply text-[42px] leading-[47px];
+    }
+
+    h4 {
+        @apply text-[36px] leading-[40px];
+    }
+
+    h5 {
+        @apply text-[32px] leading-[39px];
+    }
+
+    h6 {
+        @apply text-[24px] leading-[28px];
+    }
+
+    b, strong {
+        @apply font-bold;
+    }
+
+}
+/*overwrite default class style using base end*/
+
+/*create a component start. when creating a component using tailwind css*/
+@layer components {
+    .btn-primary {
+        @apply bg-primary hover:bg-primaryDark border-[1.5px] border-primary hover:border-primaryDark rounded-[10px] text-white text-[18px] font-medium px-[20px] py-[9px];
+    }
+
+    .btn-secondary {
+        @apply bg-transparent border-[1.5px] border-primary hover:border-primaryDark hover:text-primaryDark rounded-[10px] text-primary text-[18px] font-medium px-[19px] py-[9px]
+    }
+
+
+    .form-control {
+        @apply px-3 py-2 border border-[#e3e1e4]  rounded-md bg-[#e3e1e4] focus:border-primary focus-visible:outline-none  placeholder:text-black text-[16px];
+    }
+
+    /*.form-select, select {*/
+    /*    @apply py-3 ps-3 pe-8 border border-[#DDDDDD] appearance-none  rounded-md focus:border-accent focus-visible:outline-none  placeholder:text-black text-[16px];*/
+    /*}*/
+    /*.form-select, select {*/
+    /*    background-image: url("data:image/svg+xml,%3csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M0 0.5L5 5.5L10 0.5H0Z' fill='%23757575'/%3e%3c/svg%3e");*/
+    /*    background-size: 10px;*/
+    /*    background-repeat: no-repeat;*/
+    /*    background-position: 95% center;*/
+    /*}*/
+
+}
+/*create a component end*/
+
+/*when you try to write new class combine of tailwind class start*/
+/*we can move this also inside components*/
+.vw-scale {
+    @apply transform transition duration-500 ease-in-out hover:scale-105;
+}
+
+.heading {
+    @apply md:text-[56px] md:leading-[68px] text-[32px] leading-[36px] font-light;
+}
+
+.title {
+    @apply font-bold  lg:text-[40px] lg:leading-[48px] text-[24px] leading-[30px];
+}
+
+.sub-title {
+}
+
+.title-xl {
+}
+
+.title-sm {
+}
+
+/*when you try to write new class combine of tailwind class end*/
+/*header design start*/
+header {
+    @apply absolute w-full z-[999999] py-[24px];
+}
+
+.header-menu ul {
+}
+
+.header-menu ul li {
+}
+
+.header-menu ul li a {
+}
+
+.cta-menu ul {
+}
+
+.cta-menu ul li {
+}
+
+.cta-menu ul li a {
+}
+
+.header-menu ul, .cta-menu ul {
+    @apply flex flex-wrap gap-6;
+}
+
+.header-menu ul li, .cta-menu ul li {
+}
+
+.header-menu ul li a, .cta-menu ul li a {
+    @apply text-white font-bold text-[18px] hover:text-primary;
+}
+
+/*header design end*/
+/*hero design start*/
+.hero {
+    @apply relative
+}
+
+
+/*hero design end*/
+/*footer design start*/
+footer {
+    @apply bg-[#3F4447];
+}
+
+footer h3 {
+    @apply text-[18px] leading-[32px] mb-1.5 font-bold text-white;
+}
+
+footer li, footer li a {
+    @apply text-[16px] leading-[20px]  text-white hover:text-primaryLight;
+}
+
+footer li {
+    @apply py-1.5;
+}
+
+.footer-social ul {
+    @apply flex flex-wrap gap-4 ;
+}
+
+.footer-social ul img {
+    @apply max-w-[32px];
+}
+
+.footer-social ul img:hover {
+    @apply bg-primary rounded-full;
+}
+
+.footer-copyright ul {
+    @apply flex flex-wrap items-center lg:justify-start justify-center gap-[24px] py-[40px];
+}
+
+
+.footer-copyright ul li, .footer-copyright ul li a {
+    @apply text-white text-[12px] leading-[20px] hover:text-primaryLight;
+}
+
+/*footer design end*/
+/*slider start*/
+.vwCarouselCenter .slick-slide {
+     display: flex;
+}
+/*slider end*/
+

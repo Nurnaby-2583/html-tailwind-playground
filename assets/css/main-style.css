@@ -1,5 +1,5 @@
 /*
-! tailwindcss v3.4.1 | MIT License | https://tailwindcss.com
+! tailwindcss v3.3.3 | MIT License | https://tailwindcss.com
 */
 
 /*
@@ -32,11 +32,9 @@
 4. Use the user's configured `sans` font-family by default.
 5. Use the user's configured `sans` font-feature-settings by default.
 6. Use the user's configured `sans` font-variation-settings by default.
-7. Disable tap highlights on iOS
 */
 
-html,
-:host {
+html {
   line-height: 1.5;
   /* 1 */
   -webkit-text-size-adjust: 100%;
@@ -46,14 +44,12 @@ html,
   -o-tab-size: 4;
      tab-size: 4;
   /* 3 */
-  font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family: Roboto, sans-serif;
   /* 4 */
   font-feature-settings: normal;
   /* 5 */
   font-variation-settings: normal;
   /* 6 */
-  -webkit-tap-highlight-color: transparent;
-  /* 7 */
 }
 
 /*
@@ -125,10 +121,8 @@ strong {
 }
 
 /*
-1. Use the user's configured `mono` font-family by default.
-2. Use the user's configured `mono` font-feature-settings by default.
-3. Use the user's configured `mono` font-variation-settings by default.
-4. Correct the odd `em` font sizing in all browsers.
+1. Use the user's configured `mono` font family by default.
+2. Correct the odd `em` font sizing in all browsers.
 */
 
 code,
@@ -137,12 +131,8 @@ samp,
 pre {
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   /* 1 */
-  font-feature-settings: normal;
-  /* 2 */
-  font-variation-settings: normal;
-  /* 3 */
   font-size: 1em;
-  /* 4 */
+  /* 2 */
 }
 
 /*
@@ -444,6 +434,57 @@ video {
   display: none;
 }
 
+/*
+    we can also use like this
+    h1 {
+      font-size:36px;
+    }
+    h2 {
+      font-size:28px
+    }*/
+
+body {
+  font-family: Roboto, sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity));
+}
+
+p {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity));
+}
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+h1 {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+
+h2 {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+h5 {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
 *, ::before, ::after {
   --tw-border-spacing-x: 0;
   --tw-border-spacing-y: 0;
@@ -544,118 +585,118 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
-.relative {
-  position: relative;
-}
-
-.-left-\[90px\] {
-  left: -90px;
-}
-
-.left-0 {
-  left: 0px;
-}
-
-.right-0 {
-  right: 0px;
-}
-
-.right-\[-90px\] {
-  right: -90px;
-}
-
-.my-6 {
-  margin-top: 1.5rem;
-  margin-bottom: 1.5rem;
-}
-
-.flex {
-  display: flex;
-}
-
-.h-\[124px\] {
-  height: 124px;
-}
-
-.w-full {
+.container {
   width: 100%;
 }
 
-.max-w-\[1280px\] {
-  max-width: 1280px;
+@media (min-width: 480px) {
+  .container {
+    max-width: 480px;
+  }
 }
 
-.items-center {
-  align-items: center;
+@media (min-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
 }
 
-.justify-center {
-  justify-content: center;
+@media (min-width: 992px) {
+  .container {
+    max-width: 992px;
+  }
 }
 
-.border {
-  border-width: 1px;
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1200px;
+  }
 }
 
-.py-4 {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+@media (min-width: 1600px) {
+  .container {
+    max-width: 1600px;
+  }
 }
 
-.py-6 {
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
+.text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
 }
 
-.text-\[18px\] {
-  font-size: 18px;
+.text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
 }
 
-:root {
-  --primary: #ee9e02;
-  --secondary: #212121;
-  --green-dark: #3d402c;
-  --green-light: #e0ebd3;
-  --grey-dark: #616161;
-  --grey-mid: #9e9e9e;
-  --grey-light: #d2d2d2;
-  --grey-border: #6e6a64;
+.font-bold {
+  font-weight: 700;
 }
 
-.custom-container {
+.underline {
+  text-decoration-line: underline;
+}
+
+/*when you try to write new class combine of tailwind class start*/
+
+/*we can move this also inside components*/
+
+.theme-title-1 {
+}
+
+.theme-title-2 {
+}
+
+.theme-container {
   margin-left: auto;
   margin-right: auto;
-  max-width: 1440px;
-}
-
-/********************** Home page Imagine slider **********************/
-
-.imagine-slider .swiper-slide {
-  border-top-width: 1px;
-  border-color: var(--grey-border);
-}
-
-.imagine-slider-nav-button {
-  margin-left: auto;
-  margin-right: auto;
-  display: flex;
-  width: 52px;
-  height: 52px;
-  align-items: center;
-  justify-content: center;
-  border-radius: 9999px;
-  border-width: 1.3px;
-  border-color: rgb(0 0 0 / 0.65);
+  max-width: 72rem;
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
   text-align: center;
-  --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-  --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
-  transition-duration: 300ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.imagine-slider .swiper-button-next::after,
-.swiper-button-prev::after {
-  display: none;
+.theme-button-container {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
 }
+
+.theme-button-container > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(1.5rem * var(--tw-space-y-reverse));
+}
+
+.theme-button-container {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+@media (min-width: 768px) {
+  .theme-button-container {
+    flex-direction: row;
+  }
+
+  .theme-button-container > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-y-reverse: 0;
+    margin-top: calc(0px * calc(1 - var(--tw-space-y-reverse)));
+    margin-bottom: calc(0px * var(--tw-space-y-reverse));
+    --tw-space-x-reverse: 0;
+    margin-right: calc(1rem * var(--tw-space-x-reverse));
+    margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)));
+  }
+}
+
+/*when you try to write new class combine of tailwind class end*/
+
+/*overwrite default class style using base start*/
+
+/*overwrite default class style using base end*/
+
+/*create a component start. when creating a component using tailwind css*/
+
+/*create a component end*/
