@@ -262,13 +262,13 @@ footer li {
 }
 
 
-/* Experience page */
+/*---------------------------- Experience page ----------------------------*/
 .experience-grid {
     @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10;
 }
 
 .demonstration-block {
-    @apply px-10 pb-10 pt-8 bg-[#F3F5F3] max-w-[440px]
+    @apply px-10  bg-[#F3F5F3] max-w-[440px]
 }
 
 .demonstration-title {
@@ -277,4 +277,16 @@ footer li {
 
 .demonstration-description {
     @apply text-black leading-[26px]
+}
+
+.custom-font-settings {
+    font-feature-settings: 'liga' off, 'clig' off;
+}
+
+.get-demo-title {
+    @apply text-[24px] font-bold mb-2 text-black font-vorwerk leading-[30px] custom-font-settings
+}
+
+.get-demo-description {
+    @apply text-[18px]  mb-2 text-black font-vorwerk leading-[30px] custom-font-settings
 }

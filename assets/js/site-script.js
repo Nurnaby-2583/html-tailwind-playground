@@ -1,5 +1,36 @@
 (function ($) {
     "use strict";
+    
+    // Form step handling
+    let currentStep = 1;
+    const totalSteps = 2;
+
+    // Next button click handler
+    $(document).on('click', '.btn-next', function(e) {
+        e.preventDefault();
+        if (currentStep < totalSteps) {
+            $('#form-step-' + currentStep).hide();
+            currentStep++;
+            $('#form-step-' + currentStep).show();
+            updateStepIndicator();
+        }
+    });
+
+    // Back button click handler
+    $(document).on('click', '.btn-back', function(e) {
+        e.preventDefault();
+        if (currentStep > 1) {
+            $('#form-step-' + currentStep).hide();
+            currentStep--;
+            $('#form-step-' + currentStep).show();
+            updateStepIndicator();
+        }
+    });
+
+    function updateStepIndicator() {
+        $('.step-indicator').text(currentStep);
+    }
+
     /*=== vwCarouselCenter start ===*/
     $('.vwCarouselCenter').slick({
         dots: true,           // Add navigation dots
