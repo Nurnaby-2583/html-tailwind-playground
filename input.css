@@ -256,3 +256,25 @@ footer li {
 }
 /*slider end*/
 
+
+.text-field {
+    @apply border-[#B2B4B5] input;
+}
+
+
+/* Experience page */
+.experience-grid {
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10;
+}
+
+.demonstration-block {
+    @apply px-10 pb-10 pt-8 bg-[#F3F5F3] max-w-[440px]
+}
+
+.demonstration-title {
+    @apply text-[30px] font-bold mb-2 text-black leading-[36px]
+}
+
+.demonstration-description {
+    @apply text-black leading-[26px]
+}

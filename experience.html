@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vorwerk E-Shop</title>
+    <!--=== favicon ===-->
+    <link href="assets/img/favicon.png" rel="icon" type="image/x-icon" />
+    <link href="assets/img/favicon.png" rel="apple-touch-icon" type="image/x-icon" />
+    <!--=== favicon ===-->
+    <!--=== font start===-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet" />
+    <!--=== font end===-->
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" />
+
+    <!--===style start===-->
+    <link href="assets/css/style.css" rel="stylesheet" />
+    <!--===style end===-->
+</head>
+
+<body>
+    <!-- Customer Support Button -->
+    <div class="fixed right-[32px] bottom-[32px] z-50">
+        <button
+            class="w-[56px] h-[56px] bg-primary hover:bg-primary/90 rounded-full flex items-center justify-center transition-all duration-300">
+            <img src="assets/img/customer-support.svg" alt="Customer Support" class="w-6 h-6">
+        </button>
+    </div>
+
+    <!-- Hero section -->
+    <div
+        class="relative h-screen w-full bg-[url('/assets/img/experience/hero.png')] bg-cover bg-center bg-no-repeat rounded-[0px_0px_168px_0px]">
+        <!-- Gradient overlay -->
+        <div
+            class="absolute inset-0 bg-gradient-to-b from-[#000000]/40 to-transparent to-[107.19%] rounded-[0px_0px_168px_0px]">
+        </div>
+
+        <!-- Additional black overlay -->
+        <div class="absolute inset-0 bg-[#000000]/20 rounded-[0px_0px_168px_0px]"></div>
+
+        <!-- Content -->
+        <div class="relative pt-[348px]">
+            <div class="w-full max-w-[920px] h-[295px] flex flex-col justify-start items-center mx-auto">
+                <div class="text-center"><span class="text-white text-7xl font-light font-vorwerk leading-[86px]">Book a
+                    </span><span class="text-white text-7xl font-bold font-vorwerk leading-[86px]">non-binding
+                        demonstration</span><span class="text-white text-7xl font-light font-vorwerk leading-[86px]">
+                        and benefit
+                        from individual advice</span></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Form Section - Positioned over hero -->
+    <div
+        class="relative -mt-[300px] z-50 max-w-[920px] mx-auto bg-white rounded-[32px] border-[2px] border-[#DCDFDC] p-12 shadow-lg">
+        <!-- Form Header -->
+        <div class="flex justify-between items-center mb-2">
+            <h2 class="text-[30px] text-neutral font-bold font-vorwerk">Your Info</h2>
+            <div class="flex items-center gap-2">
+                <span class="badge badge-neutral rounded-full w-8 h-8 flex items-center justify-center">1</span>
+                <span class="text-gray-500">of 2</span>
+            </div>
+        </div>
+
+        <p class="text-neutral mb-8">Your details & where should the demo take place?</p>
+
+        <!-- Form Content -->
+        <form>
+            <!-- Salutation -->
+            <div class="mb-6">
+                <label class="block mb-4">Salutation</label>
+                <div class="flex gap-6">
+                    <label class="flex items-center cursor-pointer">
+                        <input type="radio" name="salutation" value="Mrs" class="radio radio-primary mr-2" />
+                        <span>Mrs</span>
+                    </label>
+                    <label class="flex items-center cursor-pointer">
+                        <input type="radio" name="salutation" value="Mr" class="radio radio-primary mr-2" />
+                        <span>Mr</span>
+                    </label>
+                    <label class="flex items-center cursor-pointer">
+                        <input type="radio" name="salutation" value="Mx" class="radio radio-primary mr-2" />
+                        <span>Mx</span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Name Fields -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                <div class=" w-full">
+                    <label class="label">
+                        <span class="label-text">First name*</span>
+                    </label>
+                    <input type="text" placeholder="Write your first name" class="text-field w-full" />
+                </div>
+                <div class=" w-full">
+                    <label class="label">
+                        <span class="label-text">Last name*</span>
+                    </label>
+                    <input type="text" placeholder="Write your last name" class="text-field w-full" />
+                </div>
+            </div>
+
+            <!-- Contact Fields -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                <div class=" w-full">
+                    <label class="label">
+                        <span class="label-text">Email*</span>
+                    </label>
+                    <input type="email" placeholder="e.g. example@umail.com" class="text-field w-full" />
+                </div>
+                <div class=" w-full">
+                    <label class="label">
+                        <span class="label-text">Phone*</span>
+                    </label>
+                    <div class="join w-full">
+                        <div class="join-item flex items-center px-4 bg-gray-100 border border-gray-300">
+                            <img src="assets/img/experience/Germany.png" alt="German flag" class="w-6 h-4 mr-2" />
+                            <span>+49</span>
+                        </div>
+                        <input type="tel" placeholder="XXXXXXXXXXX" class="text-field join-item flex-1" />
+                    </div>
+                </div>
+            </div>
+
+            <!-- Address Fields -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                <div class=" w-full md:col-span-2">
+                    <label class="label">
+                        <span class="label-text">Street*</span>
+                    </label>
+                    <input type="text" placeholder="Write here" class="text-field w-full" />
+                </div>
+                <div class=" w-full">
+                    <label class="label">
+                        <span class="label-text">City*</span>
+                    </label>
+                    <input type="text" placeholder="Write city name here" class="text-field w-full" />
+                </div>
+                <div class=" w-full">
+                    <label class="label">
+                        <span class="label-text">Postal code*</span>
+                    </label>
+                    <input type="text" placeholder="XXXX-XXXX" class="text-field w-full" />
+                </div>
+            </div>
+
+            <!-- Next Button -->
+            <div class="flex justify-end mt-8">
+                <button type="submit" class="btn btn-primary px-16">Next</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Benefits Section -->
+    <div class="container mx-auto max-w-[1400px]  my-[128px]">
+        <!-- Heading -->
+        <div class="text-center mb-16">
+            <h2 class="text-5xl font-vorwerk">
+                With the Thermomix®<br>
+                demonstration you get even <span class="font-bold">more<br>
+                    out of your Thermomix®</span>
+            </h2>
+        </div>
+
+        <!-- Benefits Grid -->
+        <div class="flex gap-10">
+            <div class="flex flex-col gap-10">
+                <!-- Personal Contact -->
+                <div class="bg-[#F3F5F3] max-w-[440px]">
+                    <img src="/assets/img/experience/personal-contact.png" alt="Personal Contact" class="w-full h-fit">
+                    <div class="demonstration-block">
+                        <img src="/assets/img/icons/stirring-soft.svg" alt="Personal Contact" class="w-12 h-12 mb-4">
+                        <h3 class="demonstration-title">Personal Contact</h3>
+                        <p class="demonstration-description">Your personal contact person is always available to provide you with advice and assistance – before, during, and after the cooking experience.</p>
+                    </div>
+                </div>
+                <!-- Tips & Tricks -->
+                <div class="demonstration-block">
+                    <img src="/assets/img/icons/lightbulb.svg" alt="Tips & Tricks" class="w-12 h-12 mb-4">
+                    <h3 class="demonstration-title">Tips & Tricks</h3>
+                    <p class="demonstration-description">During the demonstration, you will receive useful tips and tricks for optimal operation of the Thermomix® TM6.</p>
+                </div>
+            </div>
+            <div class="flex flex-col gap-10">
+                <!-- Functions & Technology -->
+                <div class="demonstration-block">
+                    <img src="assets/img/icons/open-cooking.svg" alt="Functions & Technology" class="w-12 h-12 mb-4">
+                    <h3 class="demonstration-title">Functions & Technology</h3>
+                    <p class="demonstration-description">During the demonstration, you will learn all the functions of the TM6 and find out useful information about the technology of the TM6.</p>
+                </div>
+                <!-- Host Gift -->
+                <div class="bg-[#F3F5F3] max-w-[440px]">
+                    
+                    <div class="demonstration-block">
+                        <img src="assets/img/icons/gift.svg" alt="Host Gift" class="w-12 h-12 mb-4">
+                        <h3 class="demonstration-title">Host Gift</h3>
+                        <p class="demonstration-description">Invite three friends or acquaintances to a Thermomix® demonstration and receive a voucher worth CHF 100 for our e-shop as a thank you.</p>
+                    </div>
+                    <img src="/assets/img/experience/cooker.png" alt="Host Gift" class="w-full h-fit">
+                </div>
+            </div>
+            <!-- Security & Trust -->
+            <div class="bg-[#F3F5F3] max-w-[440px] flex flex-col gap-10 justify-between">
+                <div class="demonstration-block">
+                    <img src="assets/img/icons/lock-closed.svg" alt="Security & Trust" class="w-12 h-12 mb-4">
+                    <h3 class="demonstration-title">Security & Trust</h3>
+                    <p class="demonstration-description">During the demonstration, you will meet your contact person, who will show you
+                        how to use the TM6 safely and will be available to you as a trusted contact person at any time after the
+                        demonstration.</p>
+                </div>
+                <img src="assets/img/experience/capture-cooker.png" alt="Security & Trust" class="w-full h-fit">
+                
+            </div>
+        </div>
+    </div>
+
+    <!--===script start===-->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+
+    <script src="assets/js/site-script.js"></script>
+    <!--===script end===-->
+</body>
+
+</html>
