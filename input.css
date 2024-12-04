@@ -290,3 +290,80 @@ footer li {
 .get-demo-description {
     @apply text-[18px]  mb-2 text-black font-vorwerk leading-[30px] custom-font-settings
 }
+
+
+
+
+/*---------------------------- TM6 page ----------------------------*/
+
+.function-item {
+    @apply inline-flex justify-center items-center gap-6;
+}
+
+.function-item h2 {
+    @apply text-[56px] font-bold text-black leading-[68px] custom-font-settings font-vorwerk;
+}
+
+.recipe-slider {
+    margin: 0 -15px;
+}
+
+.recipe-item {
+    padding: 0 15px;
+}
+
+/* .recipe-item img {
+    transition: transform 0.3s ease;
+}
+
+.recipe-item:hover img {
+    transform: scale(1.05);
+} */
+
+/* Optional gradient overlay for better text visibility */
+.recipe-item::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 15px;
+    right: 15px;
+    height: 50%;
+    background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 100%);
+    /* border-radius: 0 0 8px 8px; */
+}
+
+.product-card {
+    @apply !bg-[#F3F5F3] max-w-[440px] bg-white rounded-lg p-8  w-full sm:w-[440px] ;
+}
+
+.product-card img {
+    @apply w-full h-auto;
+}
+
+.product-title {
+    @apply text-[18px] font-vorwerk font-bold leading-[22px] mb-[38px] text-start
+}
+
+.add-to-cart-btn {
+    @apply btn-primary p-[12px] h-[48px] w-[48px]
+}
+
+.add-to-cart-btn img {
+    @apply w-6 h-6
+}
+
+.action-section {
+    @apply flex justify-between items-center w-full 
+}
+
+.price-section {
+    @apply flex flex-col justify-start gap-1 
+}
+
+.price-section h4 {
+    @apply text-[18px] leading-[20px] text-black font-vorwerk font-medium
+}
+
+.price-section p {
+    @apply text-[10px] leading-[12px] text-[#707375]
+}

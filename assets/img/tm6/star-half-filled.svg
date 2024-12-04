@@ -1,0 +1,13 @@
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="rating">
+<path id="Pfad 427" d="M24 8.7L15.6 7.5L12 0L8.4 7.5L0 8.7L6.15 14.4L4.5 22.8L12 18.6L19.35 22.8L17.7 14.4L24 8.7Z" fill="#B2B4B5"/>
+<g id="Mask Group">
+<mask id="mask0_2239_11894" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="12" height="23">
+<rect id="mask" width="12" height="22.8" fill="#C4C4C4"/>
+</mask>
+<g mask="url(#mask0_2239_11894)">
+<path id="Pfad 428" d="M24 8.7L15.6 7.5L12 0L8.4 7.5L0 8.7L6.15 14.4L4.5 22.8L12 18.6L19.35 22.8L17.7 14.4L24 8.7Z" fill="#23282A"/>
+</g>
+</g>
+</g>
+</svg>
